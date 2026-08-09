@@ -1,0 +1,270 @@
+<title>Борд идей: коллекция фактурных пледов</title>
+<style>
+  :root {
+    --paper: #FBF8F2;
+    --sheet: #FFFFFF;
+    --ink: #38333C;
+    --ink-soft: #6E6774;
+    --line: #DDD6CF;
+    --line-strong: #A99FA8;
+    --accent: #B7737F;
+    --accent-soft: #F3E4E7;
+    --mono: ui-monospace, "Cascadia Code", "JetBrains Mono", Menlo, monospace;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      --paper: #211E26;
+      --sheet: #2A2630;
+      --ink: #E9E3DC;
+      --ink-soft: #A79FAC;
+      --line: #453F4C;
+      --line-strong: #6A6272;
+      --accent: #D9A2AC;
+      --accent-soft: #443840;
+    }
+  }
+  :root[data-theme="dark"] {
+    --paper: #211E26;
+    --sheet: #2A2630;
+    --ink: #E9E3DC;
+    --ink-soft: #A79FAC;
+    --line: #453F4C;
+    --line-strong: #6A6272;
+    --accent: #D9A2AC;
+    --accent-soft: #443840;
+  }
+
+  body {
+    background: var(--paper);
+    color: var(--ink);
+    font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+    line-height: 1.55;
+    margin: 0;
+    padding: 44px 20px 72px;
+  }
+  main { max-width: 960px; margin: 0 auto; display: flex; flex-direction: column; gap: 44px; }
+
+  .eyebrow {
+    font-family: var(--mono); font-size: 12px; letter-spacing: 0.14em;
+    text-transform: uppercase; color: var(--accent);
+  }
+  h1 {
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: clamp(30px, 5vw, 44px);
+    font-weight: 500; margin: 0; line-height: 1.12; text-wrap: balance;
+  }
+  h2 {
+    font-family: Georgia, serif; font-weight: 500; font-size: 25px;
+    margin: 0 0 4px; text-wrap: balance;
+  }
+  h2 small { display: block; font-family: var(--mono); font-size: 11.5px; letter-spacing: 0.14em; text-transform: uppercase; color: var(--accent); margin-bottom: 6px; }
+  .lede { color: var(--ink-soft); max-width: 62ch; margin: 0; }
+  header.mast { display: flex; flex-direction: column; gap: 12px; }
+  section { display: flex; flex-direction: column; gap: 18px; }
+
+  /* палитры */
+  .palettes { display: grid; grid-template-columns: repeat(auto-fit, minmax(210px, 1fr)); gap: 16px; }
+  .palette {
+    background: var(--sheet); border: 1px solid var(--line); border-radius: 6px;
+    padding: 14px 16px 16px; display: flex; flex-direction: column; gap: 10px;
+  }
+  .palette .chips { display: flex; height: 44px; border-radius: 4px; overflow: hidden; border: 1px solid var(--line-strong); }
+  .palette .chips i { flex: 1; }
+  .palette b { font-size: 14.5px; font-weight: 600; }
+  .palette span { font-size: 13px; color: var(--ink-soft); }
+
+  /* карточки концептов */
+  .concepts { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 18px; }
+  article.concept {
+    background: var(--sheet); border: 1px solid var(--line); border-radius: 6px;
+    padding: 20px 22px 18px; display: flex; flex-direction: column; gap: 10px;
+    border-top: 3px solid var(--accent);
+  }
+  .concept h3 { font-family: Georgia, serif; font-weight: 500; font-size: 19px; margin: 0; }
+  .concept .num { font-family: var(--mono); font-size: 11px; color: var(--ink-soft); letter-spacing: 0.12em; }
+  .concept p { margin: 0; font-size: 14.5px; }
+  .concept .why { font-size: 13px; color: var(--ink-soft); border-left: 2px solid var(--accent); padding-left: 10px; }
+  .concept .why b { color: var(--accent); font-weight: 600; }
+  .concept .mini-chips { display: flex; gap: 4px; }
+  .concept .mini-chips i { width: 26px; height: 14px; border-radius: 3px; border: 1px solid var(--line-strong); display: inline-block; }
+  .concept a { color: var(--accent); font-size: 13px; text-decoration-thickness: 1px; }
+  .concept .refs { margin-top: auto; display: flex; flex-wrap: wrap; gap: 4px 14px; padding-top: 6px; }
+
+  /* референсы */
+  .ref-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 16px; }
+  .ref-block { background: var(--sheet); border: 1px solid var(--line); border-radius: 6px; padding: 16px 18px; }
+  .ref-block b { display: block; margin-bottom: 8px; font-size: 14.5px; }
+  .ref-block ul { margin: 0; padding-left: 18px; font-size: 14px; display: flex; flex-direction: column; gap: 6px; }
+  .ref-block a { color: var(--accent); text-decoration-thickness: 1px; }
+  .ref-block .note { font-size: 12.5px; color: var(--ink-soft); margin-top: 8px; }
+
+  .principle {
+    border: 1px solid var(--accent); background: var(--accent-soft); border-radius: 6px;
+    padding: 16px 20px; max-width: 72ch; font-size: 15px;
+  }
+  footer.colophon { text-align: center; font-family: var(--mono); font-size: 12px; color: var(--ink-soft); }
+  a:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; border-radius: 2px; }
+</style>
+
+<main>
+  <header class="mast">
+    <span class="eyebrow">Проект «Вязание» · для мастера фактурных пледов</span>
+    <h1>Борд идей: куда развернуть вафельную фактуру</h1>
+    <p class="lede">Восемь концептов для уникальных работ на базе уже отработанной техники. Каждый — это готовая идея коллекционной вещи: образ, палитра, почему это ищут прямо сейчас, и где смотреть визуальные референсы.</p>
+    <div class="principle">Логика борда: техника у мастера уже виртуозная — уникальность рождается из <b>цвета, формата и истории</b>, которую вещь рассказывает. Ни один концепт не требует осваивать что-то новое.</div>
+  </header>
+
+  <section>
+    <h2><small>Материал сезона</small>Четыре цветовые истории 2026</h2>
+    <div class="palettes">
+      <div class="palette">
+        <div class="chips"><i style="background:#F1EBDF"></i><i style="background:#E4D6C4"></i><i style="background:#C8B39B"></i><i style="background:#A98F76"></i></div>
+        <b>Крем-карамель</b>
+        <span>тон-в-тон нейтралы, «тихая роскошь» — самая продаваемая гамма интерьерного текстиля</span>
+      </div>
+      <div class="palette">
+        <div class="chips"><i style="background:#F3EFE8"></i><i style="background:#A9B49E"></i><i style="background:#7E8A74"></i><i style="background:#C77E5E"></i></div>
+        <b>Шалфей + терракота</b>
+        <span>природная пара года: спокойная зелень с тёплым глиняным акцентом</span>
+      </div>
+      <div class="palette">
+        <div class="chips"><i style="background:#F1EBDF"></i><i style="background:#C9909A"></i><i style="background:#A49FAB"></i><i style="background:#6D6875"></i></div>
+        <b>Пудра и дым</b>
+        <span>гамма её пледа с фото — уже попадание в тренд, можно углублять</span>
+      </div>
+      <div class="palette">
+        <div class="chips"><i style="background:#EFEAE2"></i><i style="background:#D9D3C8"></i><i style="background:#B23A48"></i><i style="background:#3B3A43"></i></div>
+        <b>Айвори + красная нить</b>
+        <span>нейтральное полотно с одним дерзким акцентом — главный приём подиумов 2026</span>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <h2><small>Генератор работ</small>Восемь концептов</h2>
+    <div class="concepts">
+
+      <article class="concept">
+        <span class="num">01 · ИНТЕРЬЕРНЫЙ ХИТ</span>
+        <h3>Шахматка</h3>
+        <div class="mini-chips"><i style="background:#F1EBDF"></i><i style="background:#A98F76"></i></div>
+        <p>Крупная двухцветная клетка-«дамье» на всё полотно. Вафельная ячейка внутри шахматной клетки даёт двойную геометрию — эффектнее любого принта.</p>
+        <p class="why"><b>Почему сейчас:</b> checkerboard — один из самых устойчивых мотивов в интерьерах и на маркетплейсах, а в вафельной фактуре его почти никто не делает.</p>
+        <div class="refs">
+          <a href="https://www.pinterest.com/search/pins/?q=checkerboard%20crochet%20blanket" target="_blank" rel="noopener">Pinterest: checkerboard blanket</a>
+        </div>
+      </article>
+
+      <article class="concept">
+        <span class="num">02 · ПЕРСОНАЛИЗАЦИЯ</span>
+        <h3>Плед-история</h3>
+        <div class="mini-chips"><i style="background:#A9B49E"></i><i style="background:#E4D6C4"></i><i style="background:#C77E5E"></i><i style="background:#C9909A"></i><i style="background:#6D6875"></i></div>
+        <p>Плед, где полосы кодируют историю: первый год жизни ребёнка (ряд = неделя, цвет = событие), год свадьбы, палитра любимого заката. К вещи прилагается «легенда» — карточка с расшифровкой.</p>
+        <p class="why"><b>Почему сейчас:</b> формат temperature blanket — многолетний вирусный жанр; персональная история превращает плед в семейную реликвию и снимает сравнение по цене.</p>
+        <div class="refs">
+          <a href="https://www.pinterest.com/search/pins/?q=temperature%20blanket" target="_blank" rel="noopener">Pinterest: temperature blanket</a>
+        </div>
+      </article>
+
+      <article class="concept">
+        <span class="num">03 · ТИХАЯ РОСКОШЬ</span>
+        <h3>Тон-в-тон</h3>
+        <div class="mini-chips"><i style="background:#F1EBDF"></i><i style="background:#EFE7D9"></i></div>
+        <p>Один цвет — айвори по айвори. Вся выразительность на фактуре: свет ложится в ячейки, и плед выглядит как дорогой отельный текстиль. Подача с широкой атласной лентой.</p>
+        <p class="why"><b>Почему сейчас:</b> quiet luxury и japandi держат спрос на однотонные фактурные вещи; это самый «взрослый» и маржинальный сегмент пледов.</p>
+        <div class="refs">
+          <a href="https://www.pinterest.com/search/pins/?q=cream%20textured%20throw%20blanket%20japandi" target="_blank" rel="noopener">Pinterest: textured throw japandi</a>
+        </div>
+      </article>
+
+      <article class="concept">
+        <span class="num">04 · ГРАДИЕНТ</span>
+        <h3>Омбре-закат</h3>
+        <div class="mini-chips"><i style="background:#F1EBDF"></i><i style="background:#E8C9B8"></i><i style="background:#D49B84"></i><i style="background:#B76E5E"></i><i style="background:#8A4B48"></i></div>
+        <p>Плавный переход через 5–7 оттенков одной гаммы, ступени спрятаны в горизонтальные рёбра вафли. Серии: «закат», «море», «вереск» — каждая вещь в единственном экземпляре.</p>
+        <p class="why"><b>Почему сейчас:</b> градиентные переходы — заметный тренд 2026 в цветном вязании; фото омбре-пледов собирают максимум сохранений.</p>
+        <div class="refs">
+          <a href="https://www.pinterest.com/search/pins/?q=ombre%20crochet%20blanket" target="_blank" rel="noopener">Pinterest: ombre blanket</a>
+        </div>
+      </article>
+
+      <article class="concept">
+        <span class="num">05 · ДЕРЗКИЙ АКЦЕНТ</span>
+        <h3>Красная кайма</h3>
+        <div class="mini-chips"><i style="background:#EFEAE2"></i><i style="background:#B23A48"></i></div>
+        <p>Сдержанное нейтральное полотно и один удар цвета: алая кайма или единственная красная полоса не по центру. Минимум работы с цветом — максимум характера.</p>
+        <p class="why"><b>Почему сейчас:</b> «уверенный красный на нейтральном» — приём прямиком из подиумных коллекций осень-зима 2026.</p>
+        <div class="refs">
+          <a href="https://www.pinterest.com/search/pins/?q=neutral%20blanket%20red%20border" target="_blank" rel="noopener">Pinterest: red border blanket</a>
+        </div>
+      </article>
+
+      <article class="concept">
+        <span class="num">06 · КОМПЛЕКТ</span>
+        <h3>Диванная пара</h3>
+        <div class="mini-chips"><i style="background:#F3EFE8"></i><i style="background:#A9B49E"></i><i style="background:#7E8A74"></i></div>
+        <p>Плед + две наволочки той же фактуры в перекликающихся цветах. Продаётся как готовый образ «уютной гостиной» — средний чек растёт в два-три раза без новой техники.</p>
+        <p class="why"><b>Почему сейчас:</b> покупатели маркетплейсов ищут «сет», а не предмет; комплекты стабильно обходят одиночные позиции в подарочных категориях.</p>
+        <div class="refs">
+          <a href="https://www.pinterest.com/search/pins/?q=crochet%20pillow%20blanket%20set" target="_blank" rel="noopener">Pinterest: pillow + blanket set</a>
+        </div>
+      </article>
+
+      <article class="concept">
+        <span class="num">07 · ПИКСЕЛЬ</span>
+        <h3>Скрытый мотив</h3>
+        <div class="mini-chips"><i style="background:#F1EBDF"></i><i style="background:#C9909A"></i></div>
+        <p>Пиксельный рисунок цветными блоками по вафельной сетке: сердце, звезда, инициал, силуэт гуся. Ячейка вафли = готовый «пиксель», сетка сама размечает рисунок.</p>
+        <p class="why"><b>Почему сейчас:</b> pixel-blanket — растущий жанр у молодой аудитории; инициал превращает плед в именной подарок без вышивки.</p>
+        <div class="refs">
+          <a href="https://www.pinterest.com/search/pins/?q=pixel%20crochet%20blanket" target="_blank" rel="noopener">Pinterest: pixel blanket</a>
+        </div>
+      </article>
+
+      <article class="concept">
+        <span class="num">08 · ГИНГЕМ</span>
+        <h3>Клетка виши</h3>
+        <div class="mini-chips"><i style="background:#F3EFE8"></i><i style="background:#D9B3BB"></i><i style="background:#C9909A"></i></div>
+        <p>Мелкая трёхтоновая клетка (белый / полутон / цвет) — классический гингем в мягкой пудровой гамме. Особенно силён в детском размере и как фотофон для новорождённых.</p>
+        <p class="why"><b>Почему сейчас:</b> gingham-пледы — вирусный жанр последних сезонов, который никак не остынет; вафельная версия сразу отстраивается от тысяч гладких.</p>
+        <div class="refs">
+          <a href="https://www.pinterest.com/search/pins/?q=gingham%20crochet%20blanket" target="_blank" rel="noopener">Pinterest: gingham blanket</a>
+        </div>
+      </article>
+
+    </div>
+  </section>
+
+  <section>
+    <h2><small>Насмотренность</small>Где брать референсы постоянно</h2>
+    <div class="ref-grid">
+      <div class="ref-block">
+        <b>Pinterest — главный инструмент</b>
+        <ul>
+          <li><a href="https://www.pinterest.com/search/pins/?q=waffle%20crochet%20blanket" target="_blank" rel="noopener">waffle crochet blanket</a> — её ниша целиком</li>
+          <li><a href="https://www.pinterest.com/search/pins/?q=chunky%20knit%20throw%20styling" target="_blank" rel="noopener">throw blanket styling</a> — как подают и фотографируют</li>
+          <li><a href="https://www.pinterest.com/search/pins/?q=knitwear%20texture%202026" target="_blank" rel="noopener">knitwear texture 2026</a> — фактуры сезона</li>
+        </ul>
+        <div class="note">Завести доску «Коллекция» и сохранять всё, что цепляет, — через месяц Pinterest сам начнёт приносить точные референсы.</div>
+      </div>
+      <div class="ref-block">
+        <b>Витрины конкурентов = карта спроса</b>
+        <ul>
+          <li><a href="https://www.etsy.com/market/waffle_crochet_blanket" target="_blank" rel="noopener">Etsy: waffle crochet blanket</a> — что и почём продаётся в мире</li>
+          <li><a href="https://www.livemaster.ru/catalogue/dlya-doma-i-interera/tekstil-kovry/pledy" target="_blank" rel="noopener">Ярмарка Мастеров: пледы</a> — соседи по площадке</li>
+        </ul>
+        <div class="note">Смотреть не «что скопировать», а какие ниши пустуют: вафельная шахматка и плед-история там сейчас почти не представлены.</div>
+      </div>
+      <div class="ref-block">
+        <b>Живые ленты</b>
+        <ul>
+          <li><a href="https://www.instagram.com/explore/tags/wafflestitch/" target="_blank" rel="noopener">Instagram #wafflestitch</a> — мировая лента её техники</li>
+          <li><a href="https://www.ravelry.com/patterns/search#query=waffle%20blanket&sort=popularity" target="_blank" rel="noopener">Ravelry: waffle blanket</a> — что вяжет мир прямо сейчас</li>
+          <li><a href="https://www.pinterest.com/search/pins/?q=interior%20color%20trends%202026" target="_blank" rel="noopener">Палитры интерьеров 2026</a> — цвет приходит из интерьеров раньше, чем из пряжи</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <footer class="colophon">Проект «Вязание» · борд идей для мастера · август 2026</footer>
+</main>
